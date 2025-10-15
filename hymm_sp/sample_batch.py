@@ -76,6 +76,7 @@ def main():
     """
     # Parse command-line arguments and configuration
     args = parse_args()
+    print(args)
     models_root_path = Path(args.ckpt)
     action_list = args.action_list
     action_speed_list = args.action_speed_list

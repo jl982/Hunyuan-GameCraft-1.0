@@ -4,7 +4,7 @@ import datetime
 import torch.distributed as dist
 from typing import Any, Tuple
 from torch import Tensor
-from flash_attn.flash_attn_interface import flash_attn_varlen_func
+# from flash_attn.flash_attn_interface import flash_attn_varlen_func
 
 
 class COMM_INFO:
@@ -345,7 +345,7 @@ def parallel_attention(q, k, v,
     bsz = query.shape[0]
     head = query.shape[-2]
     head_dim = query.shape[-1]
-    if use_sage:
+    if True:
         from sageattention import sageattn
         hidden_states = sageattn(query, key, value, tensor_layout="NHD")
     else:
